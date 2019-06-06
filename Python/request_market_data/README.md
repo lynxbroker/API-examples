@@ -8,11 +8,11 @@
 >- TWS Running
 > - Socket Connection enabled and configured: *Configure->API->Settings* *(Port - 7496 & Enable ActiveX and Socket Clients)*
 > - Python 3.6 or higher
-> - Set-up your environment to work with the API as described [here](/articles/Python/README.md)
+> - Set-up your environment to work with the API as described [here](https://github.com/lynxbroker/API-examples/blob/master/Python/README.md)
 > 
 
 
-At the bottom you will find the full example to request Market Data using the LYNX API, or download the .py file directly [here](/request_market_data.py). 
+At the bottom you will find the full example to request Market Data using the LYNX API, or download the .py file directly [here](https://github.com/lynxbroker/API-examples/blob/master/Python/request_market_data/request_market_data.py). 
 
 ## Initial Setup
 
@@ -227,8 +227,3 @@ Take a further look at our online API Documentation to discover all of the possi
 - [LYNX Basic Contract Definitions](https://lynxbroker.github.io/#/BasicContracts.md)
 - [LYNX Requesting Market Data](https://lynxbroker.github.io/#/TopMarketData.md)
 - [LYNX Available TickTypes](https://lynxbroker.github.io/#/TickTypes.md)
-
-
-
-
-<a href="https://lynx.nl"><img src="images/logo.svg" alt="LYNX API"></a>

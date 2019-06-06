@@ -6,7 +6,7 @@ Since the TWS RTD Server API technology directly refers to the C# API client sou
 
 #### API version 9.73.03+
 
-You need to download [API](https://lynxbroker.github.io/#/API_versions) Windows version 9.73.03 or higher and install on your computer. Once you have installed the API, you can verify the API Version by checking *C:\TWS API\API_VersionNum.txt* by default.
+You need to [download API](https://lynxbroker.github.io/#/API_versions) Windows version 9.73.03 or higher and install on your computer. Once you have installed the API, you can verify the API Version by checking *C:\TWS API\API_VersionNum.txt* by default.
 
 #### TWS (or LYNX Gateway) Build 963+
 

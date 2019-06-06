@@ -15,9 +15,9 @@
 
 > If you want to manually add the java LYNX API library, the location can be found at ".../TWS_installation_folder/source/JavaClient":
 
-
-
-![](images/jar_location.png)
+<p align="center">
+  <img src="images/jar_location.png">
+</p>
 
 
 ### The [TWSConnection.java](https://github.com/lynxbroker/API-examples/blob/master/Java/place_order/src/TWSConnection.java) class:

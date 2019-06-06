@@ -16,13 +16,16 @@
 
 > If you want to manually add the java LYNX API library, the location can be found at ".../TWS_installation_folder/source/JavaClient":
 
-
-![](images/jar_location.png)
+<p align="center">
+  <img src="images/jar_location.png">
+</p>
 
 
 
 ## Content overview
-![](images/folder_content.png)
+<p align="center">
+  <img src="images/folder_content.png">
+</p>
 
 > The *"out/artifacts/quickstart/"* folder contains the **quickstart.jar** application that wraps the whole code into a simple script that you can use to test some of the LYNX API functionalities. The *"src"* folder containing the source files *Main.java & TWSConnection.java* was used to create the *quickstart.jar* file. Finally, there is another *jar* file that represents the TWS API library that needs to be included when creating the API connection.
 
@@ -32,7 +35,9 @@
 
 > First, make sure you have *java* installed (you can check that by running in the terminal - **java --version**). Then, navigate to "out/artifacts/quickstart/" where the quickstart.jar application is located. Afterwards, open the terminal and type the following: **java -jar quickstart.jar**.
 
-![](images/console_running_jar.png)
+<p align="center">
+  <img src="images/console_running_jar.png">
+</p>
 
 Finally, the program should start running and you will be presented with a menu containing different functionalities that you can test in regard to the LYNX API.
 

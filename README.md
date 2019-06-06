@@ -1,6 +1,6 @@
 # <span style="color:green">LYNX API</span> examples
 
-Code samples that show some of the LYNX API possible implementations.
+Code samples that show some of the LYNX API possible implementations. 
 
 
 

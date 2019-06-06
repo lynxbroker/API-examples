@@ -1,4 +1,4 @@
-## Java and the <span style="color:green">LYNX API</span>
+## Java and the LYNX API
 
 *A simple Java implementation for requesting streaming market data or placing an order for a product from the TWS (Trader Workstation) or the LYNX Gateway.*
 
@@ -15,9 +15,9 @@
 
 > If you want to manually add the java LYNX API library, the location can be found at ".../TWS_installation_folder/source/JavaClient":
 
-
-
-![](images/jar_location.png)
+<p align="center">
+  <img src="images/jar_location.png">
+</p>
 
 
 ### The [TWSConnection.java](https://github.com/lynxbroker/API-examples/blob/master/Java/request_market_data/src/TWSConnection.java) class:
@@ -86,4 +86,6 @@ public class Main {
 
 
 
-![](images/console_response_market_data.png)
+<p align="center">
+  <img src="images/console_response_market_data.png">
+</p>

@@ -1,4 +1,4 @@
-## Java and the LYNX API
+## Java and the <span style="color:green">LYNX API</span>
 
 *A simple Java implementation for requesting streaming market data or placing an order for a product from the TWS (Trader Workstation) or the LYNX Gateway.*
 
@@ -20,7 +20,7 @@
 ![](images/jar_location.png)
 
 
-### The [TWSConnection.java](https://gitlab.lynx-trader.com/documentation/articles/blob/master/Java/place_order/src/TWSConnection.java) class:
+### The [TWSConnection.java](https://github.com/lynxbroker/API-examples/blob/master/Java/place_order/src/TWSConnection.java) class:
 
 > Handles the connection and the incoming messages/requests.
 >
@@ -48,7 +48,7 @@ public void tickPrice(int tickerId, int field, double price, TickAttrib tickAttr
 
 
 
-### The [Main.java](https://gitlab.lynx-trader.com/documentation/articles/blob/master/Java/place_order/src/Main.java) class:
+### The [Main.java](https://github.com/lynxbroker/API-examples/blob/master/Java/place_order/src/Main.java) class:
 
 > The place where the API calls are made from & the connection to the API is established. Once the connection to the API is created through the TWSConnection class object, different types of requests can be made. Below, some examples are provided.
 
@@ -94,3 +94,4 @@ public class Main {
 
 
 ![](images/place_api_order.png)
+

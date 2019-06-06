@@ -1,4 +1,4 @@
-# Java and the LYNX API
+# Java and the <span style="color:green">LYNX API</span>
 
 *A simple Java implementation for (1) placing an order, (2) requesting contract details, (3) requesting market data or (4) requesting historical data for a product from the TWS (Trader Workstation) or the LYNX Gateway*.
 
@@ -39,11 +39,11 @@ Finally, the program should start running and you will be presented with a menu 
 
 
 ## Editing the code
-> If you would like to make changes to the initial program implementation, you can navigate to the *"src"* folder and start editing the source code files (**Main.java** & **TWSConnection.java**). Additionally, you can also explore the separate code examples provided in the [Java](https://gitlab.lynx-trader.com/documentation/articles/tree/master/Java) repository.
+> If you would like to make changes to the initial program implementation, you can navigate to the *"src"* folder and start editing the source code files (**Main.java** & **TWSConnection.java**). Additionally, you can also explore the separate code examples provided in the [Java](https://github.com/lynxbroker/API-examples/tree/master/Java) repository.
 
 
 
-#### Overview of the [TWSConnection.java](https://gitlab.lynx-trader.com/documentation/articles/blob/master/Java/quickstart/src/TWSConnection.java) class:
+#### Overview of the [TWSConnection.java](https://github.com/lynxbroker/API-examples/blob/master/Java/quickstart/src/TWSConnection.java) class:
 
 > Handles the connection with the API and the incoming messages/requests.
 >
@@ -79,9 +79,9 @@ public void tickPrice(int tickerId, int field, double price, TickAttrib tickAttr
 
 
 
-#### Overview of the [Main.java](https://gitlab.lynx-trader.com/documentation/articles/blob/master/Java/quickstart/src/Main.java) class:
+#### Overview of the [Main.java](https://github.com/lynxbroker/API-examples/blob/master/Java/quickstart/src/Main.java) class:
 
-> The main class where the API calls are made from & the connection to the API is established. Once the connection to the API is created through the TWSConnection class object, different types of requests can be created. Check the [examples](https://gitlab.lynx-trader.com/documentation/articles/tree/master/Java) provided.
+> The main class where the API calls are made from & the connection to the API is established. Once the connection to the API is created through the TWSConnection class object, different types of requests can be created. Check the [examples](https://github.com/lynxbroker/API-examples/tree/master/Java) provided.
 
 
 

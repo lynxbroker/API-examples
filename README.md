@@ -1,6 +1,6 @@
-# <span style="color:green">LYNX API</span> examples
+# LYNX API examples
 
-Code samples that show some of the LYNX API possible implementations. 
+Code samples that show some of the LYNX API possible implementations.  
 
 
 
@@ -13,4 +13,11 @@ Code samples that show some of the LYNX API possible implementations.
 
 ---
 ##### For more information in regard to the API Documentation, visit our [website](https://lynxbroker.github.io/).
+
 ---
+
+
+
+<p align="center">
+  <img src="Java/place_order/images/logo_cover.svg">
+</p>

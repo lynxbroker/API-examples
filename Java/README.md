@@ -16,3 +16,6 @@ Code samples that show some of the LYNX API possible implementations.
 ##### Also, for more information visit our [API Documentation](https://lynxbroker.github.io/).
 ---
 
+<p align="center">
+  <img src="Java/place_order/images/logo_cover.svg">
+</p>

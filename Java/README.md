@@ -1,4 +1,4 @@
-# Java & the <span style="color:green">LYNX API</span> 
+# Java & the LYNX API 
 
 Code samples that show some of the LYNX API possible implementations.
 
@@ -17,5 +17,5 @@ Code samples that show some of the LYNX API possible implementations.
 ---
 
 <p align="center">
-  <img src="Java/place_order/images/logo_cover.svg">
+  <img src="place_order/images/logo_cover.svg">
 </p>

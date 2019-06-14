@@ -17,7 +17,7 @@ Code samples that show some of the LYNX API possible implementations.
 </p>
 
 
-# Setting up your environment to work with the LYNX API and Python
+## Setting up your environment to work with the LYNX API and Python
 
 **Requirements**:
 

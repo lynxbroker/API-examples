@@ -255,7 +255,7 @@ python3 request_historical_data.py
 
 > After which the following response indicates a successful connection:
 
-![](images/output_from_console.png)
+![](images/output_from_terminal.png)
 
 
 > After which a CSV file with the requested data will be created in your directory:

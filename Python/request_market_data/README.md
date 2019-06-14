@@ -8,11 +8,11 @@
 >- TWS Running
 > - Socket Connection enabled and configured: *Configure->API->Settings* *(Port - 7496 & Enable ActiveX and Socket Clients)*
 > - Python 3.6 or higher
-> - Set-up your environment to work with the API as described [here](https://github.com/lynxbroker/API-examples/blob/master/Python/README.md)
+> - Set-up your environment to work with the API as described [here](/articles/Python/README.md)
 > 
 
 
-At the bottom you will find the full example to request Market Data using the LYNX API, or download the .py file directly [here](https://github.com/lynxbroker/API-examples/blob/master/Python/request_market_data/request_market_data.py). 
+At the bottom you will find the full example to request Market Data using the LYNX API, or download the .py file directly [here](/request_market_data.py). 
 
 ## Initial Setup
 
@@ -24,9 +24,11 @@ At the bottom you will find the full example to request Market Data using the LY
 # Import api dependencies
 from ibapi import wrapper
 from ibapi.client import EClient
-from ibapi.utils import iswrapper
 from ibapi.contract import *
-import datetime
+from threading import Thread
+
+from datetime import datetime
+from time import sleep
 
 class Wrapper(wrapper.EWrapper):
     def __init__(self):
@@ -35,69 +37,56 @@ class Wrapper(wrapper.EWrapper):
 class Client(EClient):
     def __init__(self, wrapper):
         EClient.__init__(self, wrapper)
-
-class App(Wrapper, Client):
-    def __init__(self):
+        
+class TestApp(Wrapper, Client):
+    def __init__(self, ipaddress, portid, clientid):
         Wrapper.__init__(self)
         Client.__init__(self, wrapper=self)
-        self.started = False
+
+        self.connect(ipaddress, portid, clientid)
+
+        thread = Thread(target=self.run)
+        thread.start()
+
+        setattr(self, "_thread", thread)
+
 ```
 
-> Once our two main objects have been created, EWrapper and ESocketClient, the client application can connect via the EClientSocket object which we do later, in the main function. 
-
-**The Main function:**
-
-```python
-def main():
-    try:
-        # Init the App(Wrapper, Client)
-        app = App()
-        # Connect via the EClientSocket object to TWS via socket port 7496
-        app.connect("127.0.0.1", 7496, clientId=0)
-        
-        print("serverVersion:%s connectionTime:%s" % (app.serverVersion(),
-                                                      app.twsConnectionTime()))
-        app.run()
-        
-    except:
-        raise
-```
-
-> Once the client is connected, a reader thread will be automatically created to handle incoming messages and put the messages into a message queue for further process. It is required to trigger Client::run() above, where the message queue is processed in an infinite loop and the EWrapper call-back functions are automatically triggered.
+> Once TWS is actively listening for an incoming connection, the two main objects (EWrapper and ESocketClient) can be created. The EWrapper is necessary to receive and handle the information coming from the TWS and The ESocketCLient is used to send request/messages to the TWS. Placing them together in de TestApp class and adding a thread starts a process to listen for incoming messages and insert them in the Ewrapper. 
 
 ---
 
 ## Receiving Real-Time, Streaming, Quotes from the LYNX API:
 
-In order to start receiving data we need to perform three actions:
+In order to start receiving data we need to perform four actions:
 
 1. Define the contract to request
 2. Define the actual request
 3. Print the return from the request
+4. Call the function that includes the request in the main
 
 **The contract definition:**
 
 ```python
-# Define the contract to request
+# Define the contract
 contract = Contract()
 contract.symbol = "EUR"
-contract.secType = "CASH" # STK, FUT & OPT are other Security Types available
-contract.currency = "GBP"
+contract.secType = "CASH"
+contract.currency = "USD"
 contract.exchange = "IDEALPRO"
 ```
 
 **The Request**:
 
 ```python
-# Here we are requesting tickdata for the EUR.GBP Contract. The contract's specification is defined above
-self.reqTickByTickData(19004, contract, "MidPoint", 0, False)
+# Here we are requesting tickdata for the EUR.USD Contract. The request is inserted in a function placed in the EClient class. 
+self.reqTickByTickData(reqId, contract, "MidPoint", 0, False)
 ```
 
 **Returning the Request:**
 
 ```python
-# Here we print the Midpoint, Request ID and Time returned from the request
-@iswrapper
+# Here we print the Midpoint, Request ID and Time returned by the Ewrapper from the request
 def tickByTickMidPoint(self, reqId: int, time: int, midPoint: float):
         super().tickByTickMidPoint(reqId, time, midPoint)
         print("Midpoint. ReqId:", reqId,
@@ -105,94 +94,95 @@ def tickByTickMidPoint(self, reqId: int, time: int, midPoint: float):
               "MidPoint:", midPoint)   
 ```
 
+**The main function:**
 
-
+```python
+# Init the TestApp(Wrapper, Client)
+app = TestApp("localhost", 7496, clientid = 0)
+print("serverVersion:%s connectionTime:%s" % (app.serverVersion(),
+                                              app.twsConnectionTime()))
+# Here we call the function that includes the request for market data                                              
+app.get_marketData(contract)
+```
+                                             
 ---
 
 ### The entire code:
 
 
 ```python
-# Copyright (C) 2019 LYNX B.V. All rights reserved.
+"""
+Copyright (C) 2019 LYNX B.V. All rights reserved.
+"""
 
-# Import api dependencies
+# Import ibapi deps
 from ibapi import wrapper
 from ibapi.client import EClient
-from ibapi.utils import iswrapper
 from ibapi.contract import *
-import datetime
+from threading import Thread
+
+from datetime import datetime
+from time import sleep
+
+MARKET_ID = 19004
 
 class Wrapper(wrapper.EWrapper):
     def __init__(self):
         wrapper.EWrapper.__init__(self)
 
+    def tickByTickMidPoint(self, reqId: int, time: int, midPoint: float):
+        """returns tick-by-tick data for tickType = "MidPoint" """
+
+        super().tickByTickMidPoint(reqId, time, midPoint)
+        print("Midpoint. ReqId:", reqId,
+              "Time:", datetime.fromtimestamp(time).strftime("%Y%m%d %H:%M:%S"),
+              "MidPoint:", midPoint)
+
 class Client(EClient):
     def __init__(self, wrapper):
         EClient.__init__(self, wrapper)
 
-class App(Wrapper, Client):
-    def __init__(self):
+    def get_marketData(self, contract, reqId = MARKET_ID):
+
+        # Here we are requesting tickdata for the EUR.GBP Contract.
+        self.reqTickByTickData(reqId, contract, "MidPoint", 0, False)
+
+        MAX_WAITED_SECONDS = 5
+        print("Getting tick data from the server... can take %d second to complete" % MAX_WAITED_SECONDS)
+
+        sleep(MAX_WAITED_SECONDS)
+
+class TestApp(Wrapper, Client):
+    def __init__(self, ipaddress, portid, clientid):
         Wrapper.__init__(self)
         Client.__init__(self, wrapper=self)
-        self.started = False
-        
-    @iswrapper
-    def nextValidId(self, orderId: int):
-        super().nextValidId(orderId)
-        self.nextValidOrderId = orderId
-        print("NextValidId:", orderId)
-    
-        # We can start now
-        self.start()
- 
-    @iswrapper
-    def start(self):
-        if self.started:
-            return
 
-        self.started = True
-        print("Executing requests")
+        self.connect(ipaddress, portid, clientid)
 
-        # Define the contract to request
-        contract = Contract()
-        contract.symbol = "EUR"
-        contract.secType = "CASH" # STK, FUT & OPT are other Security Types available
-        contract.currency = "GBP"
-        contract.exchange = "IDEALPRO"
+        thread = Thread(target=self.run)
+        thread.start()
 
-        # Here we are requesting tickdata for the EUR.GBP Contract. The contract's specification is defined above
-        self.reqTickByTickData(19004, contract, "MidPoint", 0, False)
-            
-        print("Executing requests ... finished")
+        setattr(self, "_thread", thread)
 
-    # Here we print the Midpoint, Request ID and Time returned from the request
-    @iswrapper
-    def tickByTickMidPoint(self, reqId: int, time: int, midPoint: float):
-        super().tickByTickMidPoint(reqId, time, midPoint)
-        print("Midpoint. ReqId:", reqId,
-              "Time:", datetime.datetime.fromtimestamp(time).strftime("%Y%m%d %H:%M:%S"),
-              "MidPoint:", midPoint)     
-        
 def main():
-    try:
-        # Init the App(Wrapper, Client)
-        app = App()
-        # Connect via the EClientSocket object to TWS via socket port 7496
-        app.connect("127.0.0.1", 7496, clientId=0)
-        
-        print("serverVersion:%s connectionTime:%s" % (app.serverVersion(),
-                                                      app.twsConnectionTime()))
-        app.run()
-        
-    except:
-        raise
-        
+    # Init the TestApp(Wrapper, Client)
+    app = TestApp("localhost", 7496, clientid = 0)
+    print("serverVersion:%s connectionTime:%s" % (app.serverVersion(),
+                                                  app.twsConnectionTime()))
+
+    # Define the contract
+    contract = Contract()
+    contract.symbol = "EUR"
+    contract.secType = "CASH"
+    contract.currency = "USD"
+    contract.exchange = "IDEALPRO"
+    
+    # Here we call the function that includes the request for market data   
+    app.get_marketData(contract)
+
 if __name__ == "__main__":
     main()
-
-
 ```
-
 
 
 ## More information:
@@ -210,13 +200,12 @@ python3 request_market_data.py
 
 > After which the following response indicates a successful connection:
 
-![](images/response_console_1.png)
-
+![](images/output_from_console.png)
 
 
 > After which a stream of data should start generating:
 
-![](images/response_console_2.png)
+![](images/output_from_console2.png)
 
 ---
 
@@ -227,3 +216,5 @@ Take a further look at our online API Documentation to discover all of the possi
 - [LYNX Basic Contract Definitions](https://lynxbroker.github.io/#/BasicContracts.md)
 - [LYNX Requesting Market Data](https://lynxbroker.github.io/#/TopMarketData.md)
 - [LYNX Available TickTypes](https://lynxbroker.github.io/#/TickTypes.md)
+
+<a href="https://lynx.nl"><img src="images/logo.png" alt="LYNX API"></a>

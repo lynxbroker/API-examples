@@ -14,8 +14,7 @@ Code samples that show some of the LYNX API possible implementations.
 
 <p align="center">
   <img src="request_market_data/images/logo_cover.svg">
-</p>
-
+</p>\
 
 ## Setting up your environment to work with the LYNX API and Python
 

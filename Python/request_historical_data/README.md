@@ -255,7 +255,7 @@ python3 request_historical_data.py
 
 > After which the following response indicates a successful connection:
 
-![](images/output_from_console.png)
+![](images/output_from_terminal.png)
 
 
 > After which a CSV file with the requested data will be created in your directory:
@@ -271,9 +271,13 @@ Take a further look at our online API Documentation to discover all of the possi
 - [LYNX Basic Contract Definitions](https://lynxbroker.github.io/#/BasicContracts.md)
 - [LYNX Requesting Historical Data](https://lynxbroker.github.io/#/HistoricalBarData.md)
 
+<<<<<<< HEAD
 <br/>
 
 <p align="center">
   <img src="images/logo_cover.svg">
 </p>
 
+=======
+<a href="https://lynx.nl"><img src="images/logo_cover.svg" alt="LYNX API"></a>
+>>>>>>> d6a1011a3536ca5907425fccc8b6cb8d7373f19d

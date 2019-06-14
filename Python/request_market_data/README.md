@@ -217,4 +217,7 @@ Take a further look at our online API Documentation to discover all of the possi
 - [LYNX Requesting Market Data](https://lynxbroker.github.io/#/TopMarketData.md)
 - [LYNX Available TickTypes](https://lynxbroker.github.io/#/TickTypes.md)
 <br/>
-<a href="https://lynx.nl"><img src="images/logo_cover.svg" alt="LYNX API"></a>
+
+<p align="center">
+  <img src="images/logo_cover.svg">
+</p>

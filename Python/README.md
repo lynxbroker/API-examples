@@ -13,7 +13,7 @@ Code samples that show some of the LYNX API possible implementations.
 ---
 
 <p align="center">
-  <img src="request_market_data/images/logo_cover.svg">
+  <img src="Java/place_order/images/logo_cover.svg">
 </p>
 
 

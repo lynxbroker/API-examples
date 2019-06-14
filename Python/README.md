@@ -1,6 +1,8 @@
 # Python & the LYNX API 
 
-Code samples that show some of the LYNX API possible implementations.
+Code samples that show some of the LYNX API possible implementations. 
+
+> First you need to setup your environment to work with the LYNX API and Python using [these](/SETUP.md) instructions.
 
 ### Table of contents
 - [**place_order**](https://github.com/lynxbroker/API-examples/tree/master/Python/place_order) - code example of placing an order though the API

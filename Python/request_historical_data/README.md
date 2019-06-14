@@ -271,4 +271,4 @@ Take a further look at our online API Documentation to discover all of the possi
 - [LYNX Basic Contract Definitions](https://lynxbroker.github.io/#/BasicContracts.md)
 - [LYNX Requesting Historical Data](https://lynxbroker.github.io/#/HistoricalBarData.md)
 
-<a href="https://lynx.nl"><img src="images/logo.png" alt="LYNX API"></a>
+<a href="https://lynx.nl"><img src="images/logo_cover.svg" alt="LYNX API"></a>

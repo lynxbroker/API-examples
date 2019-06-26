@@ -2,7 +2,7 @@
 
 Code samples that show some of the LYNX API possible implementations. 
 
-*First you need to setup your environment to work with the LYNX API and Python following [these](/SETUP.md) instructions.*
+*First you need to setup your environment to work with the LYNX API and Python following [these](Python/SETUP.md) instructions.*
 
 ### Table of contents
 - [**place_order**](https://github.com/lynxbroker/API-examples/tree/master/Python/place_order) - code example of placing an order though the API
@@ -11,7 +11,7 @@ Code samples that show some of the LYNX API possible implementations.
 - [**request_market_data**](https://github.com/lynxbroker/API-examples/tree/master/Python/request_market_data) - code example of requesting realtime ticks for a product through the API
 
 ---
-##### Also, for more information visit our [API Documentation](https://lynxbroker.github.io/).
+##### Also, for more information visit our [API Documentation](https://api.lynx.academy/).
 ---
 
 <p align="center">

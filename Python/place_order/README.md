@@ -8,7 +8,7 @@
 >- TWS Running
 > - Socket Connection enabled and configured: *Configure->API->Settings* *(Port - 7496 & Enable ActiveX and Socket Clients)*
 > - Python 3.6 or higher
-> - Set-up your environment to work with the API as described [here](/articles/Python/README.md)
+> - Set-up your environment to work with the API as described [here](/Python/README.md)
 > 
 
 
@@ -241,9 +241,9 @@ python3 place_order.py
 
 Take a further look at our online API Documentation to discover all of the possibilities using LYNX' API.
 
-- [LYNX Basic Contract Definitions](https://lynxbroker.github.io/#/BasicContracts.md)
-- [LYNX Basic Order Definitions](https://lynxbroker.github.io/#/BasicOrders.md)
-- [LYNX Order Management](https://lynxbroker.github.io/#/OrderManagement.md)
+- [LYNX Basic Contract Definitions](https://api.lynx.academy/#/BasicContracts.md)
+- [LYNX Basic Order Definitions](https://api.lynx.academy/#/BasicOrders.md)
+- [LYNX Order Management](https://api.lynx.academy/#/OrderManagement.md)
 
 <br/>
 

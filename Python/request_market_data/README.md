@@ -12,7 +12,7 @@
 > 
 
 
-At the bottom you will find the full example to request Market Data using the LYNX API, or download the .py file directly [here](/request_market_data.py). 
+At the bottom you will find the full example to request Market Data using the LYNX API, or download the .py file directly [here](https://raw.githubusercontent.com/lynxbroker/API-examples/master/Python/request_market_data/request_market_data.py). 
 
 ## Initial Setup
 
@@ -111,9 +111,9 @@ app.get_marketData(contract)
 
 
 ```python
-"""
-Copyright (C) 2019 LYNX B.V. All rights reserved.
-"""
+
+# Copyright (C) 2019 LYNX B.V. All rights reserved.
+
 
 # Import ibapi deps
 from ibapi import wrapper

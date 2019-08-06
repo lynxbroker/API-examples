@@ -12,7 +12,7 @@
 > 
 
 
-At the bottom you will find the full example to request Historical Data using the LYNX API, or download the .py file directly [here](/request_historical_data.py). 
+At the bottom you will find the full example to request Historical Data using the LYNX API, or download the .py file directly [here](https://raw.githubusercontent.com/lynxbroker/API-examples/master/Python/request_historical_data/request_historical_data.py). 
 
 ## Initial Setup
 
@@ -127,9 +127,9 @@ print("BarData csv file created")
 
 ### The entire code:
 ```python
-"""
-Copyright (C) 2019 LYNX B.V. All rights reserved.
-"""
+
+# Copyright (C) 2019 LYNX B.V. All rights reserved.
+
 
 # Import ibapi deps
 from ibapi import wrapper

@@ -12,7 +12,7 @@
 > 
 
 
-At the bottom you will find the full example to place an order using the LYNX API, or download the .py file directly [here](/request_contract_details.py). 
+At the bottom you will find the full example to place an order using the LYNX API, or download the .py file directly [here](https://raw.githubusercontent.com/lynxbroker/API-examples/master/Python/place_order/place_order.py). 
 
 ## Initial Setup
 
@@ -125,9 +125,9 @@ app.place_order(contract, order)
 
 ### The entire code:
 ```python
-"""
-Copyright (C) 2019 LYNX B.V. All rights reserved.
-"""
+
+# Copyright (C) 2019 LYNX B.V. All rights reserved.
+
 
 # Import ibapi deps
 from ibapi import wrapper

@@ -2,6 +2,8 @@ MIT License
 
 Copyright (c) 2019 LYNX B.V.
 
+This License pertains exclusively to the LYNX API Examples as laid out on our Github Page. The "Software" as described in this license are the LYNX API Examples published under our Github page https://github.com/lynxbroker
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights

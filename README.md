@@ -12,7 +12,7 @@ Code samples that show some of the LYNX API possible implementations.
 
 
 ---
-##### For more information in regard to the API Documentation, visit our [website](https://lynxbroker.github.io/).
+##### For more information in regard to the API Documentation, visit our [website](https://api.lynx.academy).
 
 ---
 

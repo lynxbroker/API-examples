@@ -5,7 +5,7 @@
 
 ## Requirements:
 
-- Java TWS API library (included in the repository or [check the available versions](https://lynxbroker.github.io/#/API_versions))
+- Java TWS API library (included in the repository or [check the available versions](https://api.lynx.academy/API_versions))
 - TWS running
 - Socket Connection enabled and configured in TWS: *Configure->API->Settings* *(Port 7496 & Enable ActiveX and Socket Clients)*
 - [Java JDK 8+](https://www.oracle.com/technetwork/java/javase/downloads/index.html)

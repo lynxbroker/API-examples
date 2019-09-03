@@ -4,7 +4,7 @@
 
 ### Requirements:
 
-- Java TWS API library (included in the repository or [check available versions](https://lynxbroker.github.io/#/API_versions))
+- Java TWS API library (included in the repository or [check available versions](https://api.lynx.academy/API_versions))
 - TWS running
 - Socket Connection enabled and configured: *Configure->API->Settings* *(Port 7496 & Enable ActiveX and Socket Clients)*
 - [Java JDK 8+](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
@@ -56,7 +56,7 @@ public void tickPrice(int tickerId, int field, double price, TickAttrib tickAttr
 
 #### Placing an order:
 
->Placing an order for a specific contract can be done by invoking the [*placeOrder()*](https://lynxbroker.github.io/#/EClient?id=placeorder) function. Note that in the example below, *id 1* is used as the order id. However, in order to place an order you will need to know the *next valid id* that is provided by the function present in the TWSConnection class - [nextValidId()](https://lynxbroker.github.io/#/EWrapper?id=nextvalidid).
+>Placing an order for a specific contract can be done by invoking the [*placeOrder()*](https://api.lynx.academy/EClient?id=placeorder) function. Note that in the example below, *id 1* is used as the order id. However, in order to place an order you will need to know the *next valid id* that is provided by the function present in the TWSConnection class - [nextValidId()](https://api.lynx.academy/EWrapper?id=nextvalidid).
 
 
 

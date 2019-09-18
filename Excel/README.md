@@ -14,7 +14,7 @@ By default, market data requests sent via TWS RTD Server will automatically requ
 
 #### Enable Socket Client in TWS (or IB Gateway)
 
-Since the TWS RTD Server API directly refers to the C# API source, RTD market data requests will be sent via the socket layer. Please make sure to [Enable ActiveX and Socket Client](https://api.lynx.academy/initial_setup?id=enable-api-connections-) settings in your TWS.
+Since the TWS RTD Server API directly refers to the C# API source, RTD market data requests will be sent via the socket layer. Please make sure to [Enable ActiveX and Socket Client](https://api.lynx.academy/Initial_Setup?id=enable-api-connections-) settings in your TWS.
 
 Please also be mindful of the socket port that you configure in your TWS API settings. The default socket port TWS will listen on is **7496** for a live session, and **7497** for a paper session. It is further discussed in section [Connection Parameters](https://api.lynx.academy/RTD_Simple_Syntax?id=rtd_simple_syntax_conn) that TWS RTD Server connects to port **7496** by default, and you are able to customize the port number to connect by specifying pre-defined [Connection Parameters](https://api.lynx.academy/RTD_Simple_Syntax?id=rtd_simple_syntax_conn) or using string "port=". You can use any valid port for connection as you wish, and you just need to make sure that the port you are trying to connect to via the API is the same port your TWS is listening on.
 

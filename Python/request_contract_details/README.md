@@ -8,11 +8,11 @@
 >- TWS Running
 > - Socket Connection enabled and configured: *Configure->API->Settings* *(Port - 7496 & Enable ActiveX and Socket Clients)*
 > - Python 3.6 or higher
-> - Set-up your environment to work with the API as described [here](/Python/README.md)
+> - Set-up your environment to work with the API as described [here](/Python/SETUP.md)
 > 
 
 
-At the bottom you will find the full example to request Contract Details using the LYNX API, or download the .py file directly [here](https://raw.githubusercontent.com/lynxbroker/API-examples/master/Python/request_contract_details/request_contract_details.py). 
+At the bottom you will find the full example to request Contract Details using the LYNX API, or download the .py file directly [here](/request_contract_details.py). 
 
 ## Initial Setup
 
@@ -87,7 +87,6 @@ self.reqContractDetails(reqId, contract)
 ```python
 # Here we print the details returned by the Ewrapper 
 def contractDetails(self, reqId:int, contractDetails:ContractDetails):
-    super().contractDetails(reqId, contractDetails)
     print("marketName: ", contractDetails.marketName, "\nvalidExchanges: ", contractDetails.validExchanges,\
           "\nlongName: ", contractDetails.longName, "\nminTick: ",contractDetails.minTick)
     #printinstance(contractDetails) using this print statement all of the availabe details will be printed out.
@@ -215,8 +214,8 @@ python3 request_contract_details.py
 
 Take a further look at our online API Documentation to discover all of the possibilities using LYNX' API.
 
-- [LYNX Basic Contract Definitions](https://api.lynx.academy/BasicContracts.md)
-- [LYNX Requesting Contract Details](https://api.lynx.academy/RequestingContractDetails.md)
+- [LYNX Basic Contract Definitions](https://api.lynx.academy/BasicContracts)
+- [LYNX Requesting Contract Details](https://api.lynx.academy/RequestingContractDetails)
 
 <br/>
 

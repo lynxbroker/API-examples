@@ -8,11 +8,11 @@
 >- TWS Running
 > - Socket Connection enabled and configured: *Configure->API->Settings* *(Port - 7496 & Enable ActiveX and Socket Clients)*
 > - Python 3.6 or higher
-> - Set-up your environment to work with the API as described [here](/Python/README.md)
+> - Set-up your environment to work with the API as described [here](/Python/SETUP.md)
 > 
 
 
-At the bottom you will find the full example to request Historical Data using the LYNX API, or download the .py file directly [here](https://raw.githubusercontent.com/lynxbroker/API-examples/master/Python/request_historical_data/request_historical_data.py). 
+At the bottom you will find the full example to request Historical Data using the LYNX API, or download the .py file directly [here](/request_historical_data.py). 
 
 ## Initial Setup
 
@@ -268,8 +268,8 @@ python3 request_historical_data.py
 
 Take a further look at our online API Documentation to discover all of the possibilities using LYNX' API.
 
-- [LYNX Basic Contract Definitions](https://api.lynx.academy/BasicContracts.md)
-- [LYNX Requesting Historical Data](https://api.lynx.academy/HistoricalBarData.md)
+- [LYNX Basic Contract Definitions](https://api.lynx.academy/BasicContracts)
+- [LYNX Requesting Historical Data](https://api.lynx.academy/HistoricalBarData)
 
 <br/>
 

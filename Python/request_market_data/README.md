@@ -88,7 +88,6 @@ self.reqTickByTickData(reqId, contract, "MidPoint", 0, False)
 ```python
 # Here we print the Midpoint, Request ID and Time returned by the Ewrapper from the request
 def tickByTickMidPoint(self, reqId: int, time: int, midPoint: float):
-        super().tickByTickMidPoint(reqId, time, midPoint)
         print("Midpoint. ReqId:", reqId,
               "Time:", datetime.datetime.fromtimestamp(time).strftime("%Y%m%d %H:%M:%S"),
               "MidPoint:", midPoint)   
@@ -133,7 +132,6 @@ class Wrapper(wrapper.EWrapper):
     def tickByTickMidPoint(self, reqId: int, time: int, midPoint: float):
         """returns tick-by-tick data for tickType = "MidPoint" """
 
-        super().tickByTickMidPoint(reqId, time, midPoint)
         print("Midpoint. ReqId:", reqId,
               "Time:", datetime.fromtimestamp(time).strftime("%Y%m%d %H:%M:%S"),
               "MidPoint:", midPoint)

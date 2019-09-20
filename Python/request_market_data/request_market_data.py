@@ -20,7 +20,6 @@ class Wrapper(wrapper.EWrapper):
     def tickByTickMidPoint(self, reqId: int, time: int, midPoint: float):
         """returns tick-by-tick data for tickType = "MidPoint" """
 
-        super().tickByTickMidPoint(reqId, time, midPoint)
         print("Midpoint. ReqId:", reqId,
               "Time:", datetime.fromtimestamp(time).strftime("%Y%m%d %H:%M:%S"),
               "MidPoint:", midPoint)

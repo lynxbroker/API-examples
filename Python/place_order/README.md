@@ -93,7 +93,6 @@ order.lmtPrice = 1.12
 ```python
 # Here we return the next valid order from the Ewrapper to a global variable
 def nextValidId(self, orderId: int):
-    super().nextValidId(orderId)
     self.nextValidOrderId = orderId
     print("NextValidId:", orderId)
 
@@ -146,7 +145,6 @@ class Wrapper(wrapper.EWrapper):
 
     def nextValidId(self, orderId: int):
         """ Receives next valid order id."""
-        super().nextValidId(orderId)
 
         self.nextValidOrderId = orderId
         print("NextValidId:", orderId)

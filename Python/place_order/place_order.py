@@ -19,7 +19,6 @@ class Wrapper(wrapper.EWrapper):
 
     def nextValidId(self, orderId: int):
         """ Receives next valid order id."""
-        super().nextValidId(orderId)
 
         self.nextValidOrderId = orderId
         print("NextValidId:", orderId)

@@ -86,12 +86,11 @@ self.reqContractDetails(reqId, contract)
 
 ```python
 # Here we print the details returned by the Ewrapper 
-def historicalData(self, reqId:int, bar: BarData):
-    def contractDetails(self, reqId:int, contractDetails:ContractDetails):
-        super().contractDetails(reqId, contractDetails)
-        print("marketName: ", contractDetails.marketName, "\nvalidExchanges: ", contractDetails.validExchanges,\
-              "\nlongName: ", contractDetails.longName, "\nminTick: ",contractDetails.minTick)
-        #printinstance(contractDetails) using this print statement all of the availabe details will be printed out.
+def contractDetails(self, reqId:int, contractDetails:ContractDetails):
+    super().contractDetails(reqId, contractDetails)
+    print("marketName: ", contractDetails.marketName, "\nvalidExchanges: ", contractDetails.validExchanges,\
+          "\nlongName: ", contractDetails.longName, "\nminTick: ",contractDetails.minTick)
+    #printinstance(contractDetails) using this print statement all of the availabe details will be printed out.
 ```
 
 **The main function:**
@@ -134,7 +133,6 @@ class Wrapper(wrapper.EWrapper):
         contracts matching the requested via EEClientSocket::reqContractDetails.
         For example, one can obtain the whole option chain with it."""
 
-        super().contractDetails(reqId, contractDetails)
         print("marketName: ", contractDetails.marketName, "\nvalidExchanges: ", contractDetails.validExchanges,\
               "\nlongName: ", contractDetails.longName, "\nminTick: ",contractDetails.minTick)
         #printinstance(contractDetails) using this print statement all of the availabe details will be printed out.

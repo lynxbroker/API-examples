@@ -1,6 +1,6 @@
-"""
-Copyright (C) 2019 LYNX B.V. All rights reserved.
-"""
+
+# Copyright (C) 2019 LYNX B.V. All rights reserved.
+
 
 # Import ibapi deps
 from ibapi import wrapper

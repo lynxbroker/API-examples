@@ -68,7 +68,7 @@ These quotes will update in real-time and can be used to make calculations withi
 
 ### More information:
 
-- [Troubleshooting](https://lynxbroker.github.io/#/RTD_Troubleshooting)
-- [Simple Syntax](https://lynxbroker.github.io/#/RTD_Simple_Syntax)
-- [Mixed Syntax](https://lynxbroker.github.io/#/RTD_Mixed_Syntax)
-- [Complex Syntax](https://lynxbroker.github.io/#/RTD_Complex_Syntax)
+- [Troubleshooting](https://api.lynx.academy/RTD_Troubleshooting)
+- [Simple Syntax](https://api.lynx.academy/RTD_Simple_Syntax)
+- [Mixed Syntax](https://api.lynx.academy/RTD_Mixed_Syntax)
+- [Complex Syntax](https://api.lynx.academy/RTD_Complex_Syntax)

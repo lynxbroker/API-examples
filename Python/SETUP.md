@@ -2,7 +2,7 @@
 
 **Requirements**:
 
-- [API Software](https://lynxbroker.github.io/documentation/#/API_versions) Installed
+- [API Software](https://api.lynx.academy/#/API_versions) Installed
 - TWS Running
 - Socket Connection enabled and configured: *Configure->API->Settings* *(Port - 7496 & Enable ActiveX and Socket Clients)*
 - Python 3.6 or higher

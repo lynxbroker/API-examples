@@ -4,7 +4,7 @@
 
 ### Requirements:
 
-- Java TWS API library (included in the repository or [check available versions](https://lynxbroker.github.io/#/API_versions))
+- Java TWS API library (included in the repository or [check available versions](https://api.lynx.academy/API_versions))
 - TWS running
 - Socket Connection enabled and configured: *Configure->API->Settings* *(Port 7496 & Enable ActiveX and Socket Clients)*
 - [Java JDK 8+](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
@@ -82,7 +82,7 @@ public class Main {
 }
 ```
 
->  It initiates a **TWSConnection** object that is used to create the connection with the LYNX API. Moreover, a *Contract* is defined (in our example the USD/CAD FOREX pair) and sent together as a market data request to the API. Thus, the incoming data will be transmitted to the corresponding function in the **TWSConnection class** - [*tickPrice()*](https://lynxbroker.github.io/#/EWrapper?id=tickprice).
+>  It initiates a **TWSConnection** object that is used to create the connection with the LYNX API. Moreover, a *Contract* is defined (in our example the USD/CAD FOREX pair) and sent together as a market data request to the API. Thus, the incoming data will be transmitted to the corresponding function in the **TWSConnection class** - [*tickPrice()*](https://api.lynx.academy/EWrapper?id=tickprice).
 
 
 

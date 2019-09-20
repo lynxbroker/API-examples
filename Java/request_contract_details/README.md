@@ -4,7 +4,7 @@
 
 ### Requirements:
 
-- Java TWS API library (included in the repository or [check available versions](https://lynxbroker.github.io/#/API_versions))
+- Java TWS API library (included in the repository or [check available versions](https://api.lynx.academy/API_versions))
 - TWS running
 - Socket Connection enabled and configured: *Configure->API->Settings* *(Port 7496 & Enable ActiveX and Socket Clients)*
 - [Java JDK 8+](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
@@ -86,7 +86,7 @@ public class Main {
 
 
 
-> After invoking the [reqContractDetails](https://lynxbroker.github.io/#/EClient?id=reqcontractdetails) method, the result will be sent to the [contractDetails](https://lynxbroker.github.io/#/EWrapper?id=contractdetails) function (in TWSConnection.java class). Finally, the output looks like this:
+> After invoking the [reqContractDetails](https://api.lynx.academy/EClient?id=reqcontractdetails) method, the result will be sent to the [contractDetails](https://api.lynx.academy/EWrapper?id=contractdetails) function (in TWSConnection.java class). Finally, the output looks like this:
 
 
 

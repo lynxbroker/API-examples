@@ -4,7 +4,7 @@
 
 ## Requirements:
 
-> - [API Software](https://api.lynx.academy/#/API_versions) Installed
+> - [API Software](https://api.lynx.academy/API_versions) Installed
 >- TWS Running
 > - Socket Connection enabled and configured: *Configure->API->Settings* *(Port - 7496 & Enable ActiveX and Socket Clients)*
 > - Python 3.6 or higher
@@ -268,8 +268,8 @@ python3 request_historical_data.py
 
 Take a further look at our online API Documentation to discover all of the possibilities using LYNX' API.
 
-- [LYNX Basic Contract Definitions](https://api.lynx.academy/#/BasicContracts.md)
-- [LYNX Requesting Historical Data](https://api.lynx.academy/#/HistoricalBarData.md)
+- [LYNX Basic Contract Definitions](https://api.lynx.academy/BasicContracts.md)
+- [LYNX Requesting Historical Data](https://api.lynx.academy/HistoricalBarData.md)
 
 <br/>
 

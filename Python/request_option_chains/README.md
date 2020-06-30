@@ -68,7 +68,7 @@ In order to start receiving data we need to perform three actions:
 
 ```python
 # Here we are requesting the option chain data for IBM. IBM is the ticker, STK is the security type and 8314 is IBM's contract ID 
-self.reqSecDefOptParams(0, "IBM", "", "STK", 8314)
+self.reqSecDefOptParams(0, contract.symbol, "", contract.secType, 8314)
 
 > reqSecDefOptParams returns a list of expiries and a list of strike prices. In some cases it is possible there are combinations of strike and expiry that    would not give a valid option contract.
 
@@ -89,6 +89,7 @@ app = App('localhost', 7496, 0)
 def securityDefinitionOptionParameter(self, reqId: int, exchange: str,
         underlyingConId: int, tradingClass: str, multiplier: str,
         expirations: SetOfString, strikes: SetOfFloat):
+
         super().securityDefinitionOptionParameter(reqId, exchange,
         underlyingConId, tradingClass, multiplier, expirations, strikes)
         print("SecurityDefinitionOptionParameter.",
@@ -104,50 +105,75 @@ def securityDefinitionOptionParameter(self, reqId: int, exchange: str,
 ```python
 
 # Copyright (C) 2020 LYNX B.V. All rights reserved.
-
-
 from ibapi import wrapper
 from ibapi.wrapper import EWrapper
 from ibapi.client import EClient
+
+# We require common and contract to handle the incoming data
 from ibapi.common import *
 from ibapi.contract import *
+
+# We require threading to handle the data streams
 from threading import Thread
-
-
-class Wrapper(EWrapper):
-    def __init__(self):
-        wrapper.EWrapper.__init__(self) 
-    def securityDefinitionOptionParameter(self, reqId: int, exchange: str,
-        underlyingConId: int, tradingClass: str, multiplier: str,
-        expirations: SetOfString, strikes: SetOfFloat):
-        super().securityDefinitionOptionParameter(reqId, exchange,
-        underlyingConId, tradingClass, multiplier, expirations, strikes)
-        print("SecurityDefinitionOptionParameter.",
-        "ReqId:", reqId, "Exchange:", exchange, "Underlying conId:", underlyingConId, "TradingClass:", tradingClass, "Multiplier:", multiplier,
-        "Expirations:", expirations, "Strikes:", str(strikes))
 
 # Client => this is where our requests are made
 class Client(EClient):
     def __init__(self, wrapper):
         EClient.__init__(self, wrapper)
 
-    def requestOptionChains(self):
+    def requestOptionChains(self, contract):
         print("Requesting..")
-        self.reqSecDefOptParams(0, "IBM", "", "STK", 8314)
+        self.reqSecDefOptParams(0, contract.symbol, "", contract.secType, 8314)
+
+class Wrapper(EWrapper):
+    def __init__(self):
+        wrapper.EWrapper.__init__(self)
+
+    def securityDefinitionOptionParameter(self, reqId: int, exchange: str,
+        underlyingConId: int, tradingClass: str, multiplier: str,
+        expirations: SetOfString, strikes: SetOfFloat):
+        """ Returns the option chain for an underlying on an exchange
+        specified in reqSecDefOptParams There will be multiple callbacks to
+        securityDefinitionOptionParameter if multiple exchanges are specified
+        in reqSecDefOptParams
+
+        reqId - ID of the request initiating the callback
+        underlyingConId - The conID of the underlying security
+        tradingClass -  the option trading class
+        multiplier -    the option multiplier
+        expirations - a list of the expiries for the options of this underlying
+             on this exchange
+        strikes - a list of the possible strikes for options of this underlying
+             on this exchange """
+
+        super().securityDefinitionOptionParameter(reqId, exchange,
+        underlyingConId, tradingClass, multiplier, expirations, strikes)
+        print("Exchange:", exchange, "Underlying conId:", underlyingConId, "TradingClass:", tradingClass, "Multiplier:", multiplier,'\n',
+        "Expirations:", expirations,'\n', "Strikes:", str(strikes))
 
 # App
 class App(Wrapper, Client):
     def __init__(self, ipaddress, portid, clientid):
         Wrapper.__init__(self)
         Client.__init__(self, wrapper=self)
-        self.connect(ipaddress, portid, clientid)   
+        self.connect(ipaddress, portid, clientid)
         thread = Thread(target = self.run)
         thread.start()
         setattr(self, "_thread", thread)
 
 def main():
     app = App('localhost', 7496, 0)
-    app.requestOptionChains()
+    print("serverVersion:%s connectionTime:%s" % (app.serverVersion(),
+                                                  app.twsConnectionTime()))
+
+    # Define the contract
+    contract = Contract()
+    contract.symbol = "IBM"
+    contract.secType = "STK"
+    contract.currency = "USD"
+    contract.exchange = "SMART"
+
+    app.requestOptionChains(contract)
 
 if __name__ == "__main__":
     main()
@@ -169,10 +195,12 @@ python3 request_option_chains.py
 
 > After which the following response indicates a successful connection:
 
-![](images/output_from_console.png)
+![](images/output_from_terminal.png)
 
 
 > After which a stream of data should start generating:
+
+![](images/output_from_terminal2.png)
 
 ---
 

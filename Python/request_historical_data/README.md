@@ -12,7 +12,7 @@
 > 
 
 
-At the bottom you will find the full example to request Historical Data using the LYNX API, or download the .py file directly [here](/request_historical_data.py). 
+At the bottom you will find the full example to request Historical Data using the LYNX API, or download the .py file directly [here](Python/request_historical_data/request_historical_data.py). 
 
 ## Initial Setup
 
@@ -122,7 +122,7 @@ historical_data = app.get_historicalData(contract)
 historical_data.to_csv("BarData_{}.csv".format(HISTORIC_ID), index_label='index')
 print("BarData csv file created")
 ```
-                                             
+
 ---
 
 ### The entire code:

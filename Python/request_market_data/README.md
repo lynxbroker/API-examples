@@ -12,7 +12,7 @@
 > 
 
 
-At the bottom you will find the full example to request Market Data using the LYNX API, or download the .py file directly [here](/request_market_data.py). 
+At the bottom you will find the full example to request Market Data using the LYNX API, or download the .py file directly [here](/Python/request_market_data/request_market_data.py). 
 
 ## Initial Setup
 
@@ -103,7 +103,7 @@ print("serverVersion:%s connectionTime:%s" % (app.serverVersion(),
 # Here we call the function that includes the request for market data                                              
 app.get_marketData(contract)
 ```
-                                             
+
 ---
 
 ### The entire code:

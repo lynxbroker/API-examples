@@ -12,7 +12,7 @@
 > 
 
 
-At the bottom you will find the full example to place an order using the LYNX API, or download the .py file directly [here](/place_order.py). 
+At the bottom you will find the full example to place an order using the LYNX API, or download the .py file directly [here](/Python/place_order/place_order.py). 
 
 ## Initial Setup
 
@@ -119,7 +119,7 @@ print("serverVersion:%s connectionTime:%s" % (app.serverVersion(),
 app.place_order(contract, order)
 
 ```
-                                             
+
 ---
 
 ### The entire code:

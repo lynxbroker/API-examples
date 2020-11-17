@@ -12,7 +12,7 @@
 > 
 
 
-At the bottom you will find the full example to request Contract Details using the LYNX API, or download the .py file directly [here](/request_contract_details.py). 
+At the bottom you will find the full example to request Contract Details using the LYNX API, or download the .py file directly [here](/Python/request_contract_details/request_contract_details.py). 
 
 ## Initial Setup
 
@@ -104,7 +104,7 @@ print("serverVersion:%s connectionTime:%s" % (app.serverVersion(),
 app.get_contractDetails(contract)
 
 ```
-                                             
+
 ---
 
 ### The entire code:

@@ -14,7 +14,7 @@ Option Chains consist of all the possible strike & expiry combinations of option
 > 
 
 
-At the bottom you will find the full example to request Option Chains using the LYNX API, or download the .py file directly [here](/request_option_chains.py). 
+At the bottom you will find the full example to request Option Chains using the LYNX API, or download the .py file directly [here](/Python/request_option_chains/request_option_chains.py). 
 
 ## Initial Setup
 
@@ -96,7 +96,7 @@ def securityDefinitionOptionParameter(self, reqId: int, exchange: str,
         "ReqId:", reqId, "Exchange:", exchange, "Underlying conId:", underlyingConId, "TradingClass:", tradingClass, "Multiplier:", multiplier,
         "Expirations:", expirations, "Strikes:", str(strikes))
 ```
-                                             
+
 ---
 
 ### The entire code:

@@ -25,7 +25,7 @@ Code samples that show some of the LYNX API possible implementations.
 13. [**Create Conditional Order 1**](https://github.com/lynxbroker/API-examples/tree/master/Python/useful_examples/AddCondition)
 14. [**Create Conditional Order 2**](https://github.com/lynxbroker/API-examples/tree/master/Python/useful_examples/AddCondition2)
 15. [**Retrieve Option Chains**](https://github.com/lynxbroker/API-examples/tree/master/Python/useful_examples/RetrieveOptionChains)
-16. [**Calculate Implied Volatility or Option Price**](https://github.com/lynxbroker/API-examples/tree/master/Python/useful_examples/RetrieveImpliedVolatility)
+16. [**Calculate Implied Volatility or Option Price**](https://github.com/lynxbroker/API-examples/tree/master/Python/useful_examples/CalculateImpliedVolatility)
 
 ---
 ##### Also, for more information visit our [API Documentation](https://api.lynx.academy/).

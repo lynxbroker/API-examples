@@ -20,7 +20,7 @@ Code samples that show some of the LYNX API possible implementations.
 8. [**Calculate SMA 20**](https://github.com/lynxbroker/API-examples/tree/master/Python/useful_examples/CalculateSMA)
 9. [**Calculate EMA 20 (using TA library)**](https://github.com/lynxbroker/API-examples/tree/master/Python/useful_examples/CalculateEMA)
 10. [**Place Order**](https://github.com/lynxbroker/API-examples/tree/master/Python/useful_examples/PlaceOrder)
-11. [**Add Stop Loss**](https://github.com/lynxbroker/API-examples/tree/master/Python/useful_examples/StopLoss)
+11. [**Add Stop Loss**](https://github.com/lynxbroker/API-examples/tree/master/Python/useful_examples/StopOrder)
 12. [**Add Take Profit**](https://github.com/lynxbroker/API-examples/tree/master/Python/useful_examples/TakeProfit)
 13. [**Create Conditional Order 1**](https://github.com/lynxbroker/API-examples/tree/master/Python/useful_examples/AddCondition)
 14. [**Create Conditional Order 2**](https://github.com/lynxbroker/API-examples/tree/master/Python/useful_examples/AddCondition2)

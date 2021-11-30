@@ -13,12 +13,12 @@
 
 > After the API software has been downloaded and installed, the folder should have the following contents:
 
-![](request_market_data/images/tws_folder_content.png)
+![](informative_examples/request_market_data/images/tws_folder_content.png)
 
 > In order to include the API library in the global site-packages you must navigate to *".../TWS_installation_folder/source/pythonclient"*:
 
-![](request_market_data/images/tws_folder_content_setup.png)
+![](informative_examples/request_market_data/images/tws_folder_content_setup.png)
 
 > Finally, run the python script *setup.py* in a console with the following command - *python setup.py install* :
 
-![](request_market_data/images/console_setup.png)
+![](informative_examples/request_market_data/images/console_setup.png)

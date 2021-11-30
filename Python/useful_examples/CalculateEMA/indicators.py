@@ -1,6 +1,6 @@
 """
 Indicators as shown by Peter Bakker at:
-https://www.quantopian.com/posts/technical-analysis-indicators-without-talib-code
+https://quantopian-archive.netlify.app/forum/threads/technical-analysis-indicators-without-talib-code.html
 """
 
 """

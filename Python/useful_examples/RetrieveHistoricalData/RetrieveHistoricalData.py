@@ -25,12 +25,12 @@ app = App("localhost", 7496, clientid=0)
 time.sleep(1)
 
 contract = Contract()
-contract.symbol = "INGA"
-contract.secType = "STK"
+contract.symbol = "IBNL25"
+contract.secType = "CFD"
 contract.currency = "EUR"
-contract.exchange = "AEB"
+contract.exchange = "SMART"
 
-app.reqHistoricalData(1, contract, '', '1 D', '1 hour', 'TRADES', 0, 1, False, [])
+app.reqHistoricalData(1, contract, '', '2 D', '1 hour', 'MIDPOINT', 0, 1, False, [])
 
 time.sleep(5)
 app.disconnect()

@@ -39,7 +39,7 @@ time.sleep(5)
 df = pandas.DataFrame(app.data, columns=['DateTime', 'Close'])
 df['DateTime'] = pandas.to_datetime(df['DateTime'],unit='s')
 df['20SMA'] = df['Close'].rolling(20).mean() #calculate SMA using the rolling function of pandas
-df.to_csv('INGA_Hourly.csv')
+df.to_csv('INGA_Hourly_SMA.csv')
 
 print(df.tail(20))
 

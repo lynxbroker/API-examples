@@ -40,7 +40,7 @@ time.sleep(5)
 df = pandas.DataFrame(app.data, columns=['DateTime', 'Close'])
 df['DateTime'] = pandas.to_datetime(df['DateTime'],unit='s')
 df = indicators.exponential_moving_average(df, 20)
-df.to_csv('INGA_Hourly.csv')
+df.to_csv('INGA_Hourly_EMA.csv')
 
 print(df.tail(20))
 
